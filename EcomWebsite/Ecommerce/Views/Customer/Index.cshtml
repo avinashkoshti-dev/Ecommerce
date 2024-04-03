@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="right_col" role="main">
+    <div class="title_left">
+        <h3>Customer</h3>
+    </div>
+    <div class="box-header">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"> <i class="fa fa-plus"></i>Add Customer</button>
+    </div>
+
+    <div class="x_panel">
+        <div class="x_title">
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <table id="CustomerTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody"></tbody>
+                <tr class="trrow d-none">
+                    <td class="firstname"></td>
+                    <td class="lastname">Last Name</td>
+                    <td class="city">City</td>
+                    <td class="country">Country</td>
+                    <td class="phone">Phone</td>
+                    <td class="action">
+                        <a href="#" class="btn btn-primary btn-xs me-2 btnEdit">Edit</a>
+                        <a href="#" class="btn btn-danger btn-xs me-2 btnDelete">Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Customer</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <input type="hidden" class="form-control" id="ID">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" required id="firstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" required id="lastName" placeholder="Last Name">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" required id="city" placeholder="City">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control" required id="country" placeholder="Country">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" required id="phone" placeholder="Phone">
+                        </div>                       
+                    </div>
+                </div>
+               
+                <div class="modal-footer">
+                    <button type="button" id="btnAdd" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="~/js/Customer.js"></script>
